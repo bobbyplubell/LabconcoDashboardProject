@@ -1,0 +1,6 @@
+framework module Pods_Labconco_V2 {
+  umbrella header "Pods-Labconco V2-umbrella.h"
+
+  export *
+  module * { export * }
+}
