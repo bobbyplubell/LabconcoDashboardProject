@@ -9,38 +9,55 @@
 import UIKit
 
 class CSVListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet var csvTableView: UITableView!
     
     var csvs: [String] = [String]();
     let updateTime: Double = 60;//60 seconds
     
+    @IBAction func updatePressed(_ sender: Any) {
+        updateCSV();
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad();
-        FreezeDryerManager.connect(urlString: "http://12.43.13.50");
-        
-        if(UserDefaults.standard.object(forKey:"csvlastupdated") != nil) {
-            if(currentTime() - UserDefaults.standard.double(forKey: "csvlastupdated") > updateTime) {
-                updateCSV();
-            }
+        let url = UserDefaults.standard.string(forKey: "url");
+        if(url != nil && (!url!.isEmpty)) {
+            FreezeDryerManager.connect(urlString: "http://" + url!);
         } else {
-            updateCSV();
+            print("No url")
         }
-        
-        print(csvs);
         
         csvTableView.delegate = self;
         csvTableView.dataSource = self;
         
-        csvTableView.reloadData()
+        if(!FreezeDryerManager.freezeDryer.csvs.isEmpty) {
+            csvTableView.reloadData()
+        }
     }
     
     func updateCSV() {
         print("updating csvs");
         do {
-            csvs = try FreezeDryerManager.freezeDryer.getCSVs();
-            UserDefaults.standard.set(currentTime(), forKey: "csvlastupdated");
-        } catch {
+            try FreezeDryerManager.freezeDryer.getCSVAsync(completion: csvUpdated);
+        } catch FreezeDryer.FreezeDryerError.cannotConnect {
             print("CSV Connection error");
+        }
+    }
+    
+    func csvUpdated(success: Bool, csvs_: [String]) {
+        print("csvUpdated!")
+        if(success) {
+            self.csvs = csvs_;
+            DispatchQueue.main.async {
+                self.csvTableView.reloadData();
+            }
+        } else {
+            print("csv update not successful");
         }
     }
     
@@ -63,7 +80,8 @@ class CSVListViewController: UIViewController, UITableViewDelegate, UITableViewD
             else {
                 fatalError("Cell not of type csv table view cell");
         }
-        
+        print(indexPath.row);
+        print(csvs);
         cell.csvName.text = csvs[indexPath.row];
         
         return cell

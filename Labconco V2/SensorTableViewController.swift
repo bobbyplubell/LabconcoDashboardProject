@@ -59,7 +59,6 @@ class SensorTableViewController: UIViewController, UITableViewDataSource, UITabl
         print(FreezeDryerManager.freezeDryer.sensors.count);
         return FreezeDryerManager.freezeDryer.sensors.count;
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "SensorTableViewCell";

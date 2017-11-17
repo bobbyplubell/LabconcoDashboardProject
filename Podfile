@@ -7,5 +7,4 @@ target 'Labconco V2' do
     pod 'SwiftSoup'
     pod 'Charts'
   # Pods for Labconco V2
-
 end

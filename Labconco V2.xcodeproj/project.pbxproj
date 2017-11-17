@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		17883BBAB9A52AAFCA549611 /* Pods_Labconco_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030BD960923C14BBE08A4612 /* Pods_Labconco_V2.framework */; };
 		910DE09A1F9A344200776081 /* CSVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910DE0991F9A344200776081 /* CSVTableViewCell.swift */; };
+		91193C391FAB94E60026216D /* CSVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91193C381FAB94E60026216D /* CSVManager.swift */; };
+		91B85FA41FAB4C020086CDEC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B85FA31FAB4C020086CDEC /* ChartViewController.swift */; };
+		91B85FA91FAB61740086CDEC /* CSVSensorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B85FA81FAB61740086CDEC /* CSVSensorTableViewController.swift */; };
+		91B85FAB1FAB61820086CDEC /* CSVSensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B85FAA1FAB61820086CDEC /* CSVSensorTableViewCell.swift */; };
 		91FC688B1F9917120040EA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC688A1F9917120040EA0B /* AppDelegate.swift */; };
 		91FC688D1F9917120040EA0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC688C1F9917120040EA0B /* ViewController.swift */; };
 		91FC68901F9917120040EA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FC688E1F9917120040EA0B /* Main.storyboard */; };
@@ -65,6 +69,10 @@
 /* Begin PBXFileReference section */
 		030BD960923C14BBE08A4612 /* Pods_Labconco_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Labconco_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910DE0991F9A344200776081 /* CSVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVTableViewCell.swift; sourceTree = "<group>"; };
+		91193C381FAB94E60026216D /* CSVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVManager.swift; sourceTree = "<group>"; };
+		91B85FA31FAB4C020086CDEC /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		91B85FA81FAB61740086CDEC /* CSVSensorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVSensorTableViewController.swift; sourceTree = "<group>"; };
+		91B85FAA1FAB61820086CDEC /* CSVSensorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVSensorTableViewCell.swift; sourceTree = "<group>"; };
 		91FC68871F9917120040EA0B /* Labconco V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Labconco V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FC688A1F9917120040EA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91FC688C1F9917120040EA0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +156,10 @@
 				91FC68961F9917120040EA0B /* Info.plist */,
 				91FE21AC1F991F060010C624 /* CSVListViewController.swift */,
 				910DE0991F9A344200776081 /* CSVTableViewCell.swift */,
+				91B85FA31FAB4C020086CDEC /* ChartViewController.swift */,
+				91B85FA81FAB61740086CDEC /* CSVSensorTableViewController.swift */,
+				91B85FAA1FAB61820086CDEC /* CSVSensorTableViewCell.swift */,
+				91193C381FAB94E60026216D /* CSVManager.swift */,
 			);
 			path = "Labconco V2";
 			sourceTree = "<group>";
@@ -317,15 +329,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B85FAB1FAB61820086CDEC /* CSVSensorTableViewCell.swift in Sources */,
 				91FE218E1F991C530010C624 /* SensorTableViewController.swift in Sources */,
 				91FE21941F991CB60010C624 /* SensorTableViewCell.swift in Sources */,
+				91B85FA91FAB61740086CDEC /* CSVSensorTableViewController.swift in Sources */,
 				91FC688D1F9917120040EA0B /* ViewController.swift in Sources */,
 				91FC688B1F9917120040EA0B /* AppDelegate.swift in Sources */,
 				91FE21911F991C530010C624 /* FreezeDryer.swift in Sources */,
+				91193C391FAB94E60026216D /* CSVManager.swift in Sources */,
 				910DE09A1F9A344200776081 /* CSVTableViewCell.swift in Sources */,
 				91FE21AD1F991F060010C624 /* CSVListViewController.swift in Sources */,
 				91FE218F1F991C530010C624 /* ConnectViewController.swift in Sources */,
 				91FE21921F991C530010C624 /* FreezeDryerManager.swift in Sources */,
+				91B85FA41FAB4C020086CDEC /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,9 +18,11 @@ class FreezeDryer{
     var time : String;
     var fdMode : String;
     var product : String;
+    var csvs : [String] = [String]();
     
     enum FreezeDryerError: Error {
         case invalidJSONString;
+        case cannotConnect
     }
     
     init?(urlString: String) {
@@ -49,21 +51,27 @@ class FreezeDryer{
         let populateTask = URLSession.shared.dataTask(with: self.url) {(data, response, error) in
             if(error != nil) {
                 completion(false, [String]());
+                return;
             }
             do {
-                let doc: Document = try SwiftSoup.parse((data as? String)!);
+                let strData = String(data:data!, encoding: String.Encoding.utf8) as String!;
+                let doc: Document = try SwiftSoup.parse((strData)!);
                 let filelistSection: Elements = try doc.select("section#filelist");
                 let csvLinks: Elements = try filelistSection.select("a");
                 var returnArray: [String] = [String]();
                 for csv in csvLinks {
                     returnArray.append((try csv.attr("href")));
                 }
+                self.csvs = returnArray;
                 completion(true, returnArray);
+                return;
             } catch {
                 completion(false, [String]());
+                return;
             }
             
             completion(true, [String]());
+            return;
         }
         
         populateTask.resume();
