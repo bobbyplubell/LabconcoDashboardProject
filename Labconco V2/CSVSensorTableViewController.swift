@@ -14,7 +14,6 @@ class CSVSensorTableViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet var csvSensorTableView: UITableView!;
     var sensors: [String] = [String]();
     
-    
     override func viewDidLoad() {
         super.viewDidLoad();
         
@@ -23,6 +22,17 @@ class CSVSensorTableViewController: UIViewController, UITableViewDataSource, UIT
         
         if(CSVManager.downloaded) {
             sensors = CSVManager.rows;
+            
+            //this removes non-double coloumns from listed sensors.
+            var sensors_new: [String] = [String]();
+            for i in 0..<sensors.count {
+                if(Double(CSVManager.getCol(col:i)[0]) != nil) {
+                    sensors_new.append(sensors[i])
+                } else {
+                }
+            }
+            sensors = sensors_new;
+            
             csvSensorTableView.reloadData();
         }
     }
