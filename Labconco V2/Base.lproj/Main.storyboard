@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Labconco Dashboard" id="wPT-XS-Ex2">
+                                    <navigationItem title="Sensor View" id="wPT-XS-Ex2">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="j7w-zw-exK">
                                             <connections>
                                                 <segue destination="OjA-36-0Mn" kind="show" id="hyS-X3-kao"/>
@@ -95,14 +95,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Labconco Dashboard" id="yje-o0-G9x">
+                                    <navigationItem title="Graphable Files" id="yje-o0-G9x">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="k0J-zK-ed8">
                                             <connections>
                                                 <segue destination="OjA-36-0Mn" kind="show" id="oBR-xu-MUq"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="t0U-An-DND">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iuT-NL-frf">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iuT-NL-frf">
                                                 <rect key="frame" x="308" y="7" width="51" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Update"/>
@@ -177,7 +177,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <items>
-                                    <navigationItem title="Labconco Dashboard" id="Sz0-O3-KAh">
+                                    <navigationItem title="Sensors" id="Sz0-O3-KAh">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="aWP-Sv-jfM">
                                             <connections>
                                                 <segue destination="HNR-QU-NGF" kind="show" id="a9S-ir-Qyp"/>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <items>
-                                    <navigationItem title="Labconco Dashboard" id="teJ-mr-qW7">
+                                    <navigationItem title="Chart" id="teJ-mr-qW7">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="nBs-oh-loe">
                                             <connections>
                                                 <segue destination="2G8-q9-bRa" kind="show" id="gBC-4f-FD2"/>
@@ -345,7 +345,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHH-XL-0BC">
                                 <rect key="frame" x="0.0" y="245" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <state key="normal" title="View CSVs"/>
+                                <state key="normal" title="View Graphable Files"/>
                                 <connections>
                                     <segue destination="2G8-q9-bRa" kind="show" id="snZ-94-dsu"/>
                                 </connections>
@@ -366,7 +366,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hyS-X3-kao"/>
-        <segue reference="9Xi-vx-HYh"/>
+        <segue reference="a9S-ir-Qyp"/>
         <segue reference="gBC-4f-FD2"/>
     </inferredMetricsTieBreakers>
 </document>
