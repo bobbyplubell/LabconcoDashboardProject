@@ -51,10 +51,10 @@ class ChartViewController: UIViewController {
                 throw DataError.NotDouble("Not double")
             }
         }
-        times.remove(at:0);
+        times[0] = ""
+        dValues.append(dValues[dValues.count-1])
         print(times)
         print(times.count)
-        print(values)
         setData(times: times,values: dValues);
     }
     
